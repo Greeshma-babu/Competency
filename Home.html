@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+  <style>
+    .row.content {height: 550px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color:darkgrey;
+      height: 118%;
+    }
+    /* On small screens, set height to 'auto' for the grid */
+    @media screen and (max-width: 767px) {
+      .row.content {height: auto;} 
+    }
+    /*  profile image */
+    .user {
+      vertical-align: left;
+      width: 100px;
+      height: 95px;
+      border-radius: 50%;
+     }   
+
+    .topnav {
+        background-color: #333;
+        overflow: hidden;
+    }
+
+    /* Right-aligned section inside the top navigation */
+    .topnav-right {
+        float: right;
+    }
+
+    .icon-bar {
+      width: 70px;
+      background-color: #555;
+    }
+
+
+
+.icon-bar a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 20px;
+}
+
+.icon-bar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color: #6F66AA;
+}
+
+.card{
+  width: 250px;
+  height: 250px
+}
+
+.card-img-top {
+  width: 150px;
+  height: 150px
+}
+  </style>
+  <head>
+    <title>CompetoTracker</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- extra added  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <!-- icon style -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+  <body>
+
+  
+      
+      <div class="container-fluid">
+        <div class="row content">
+          <div class="col-sm-1.9 sidenav">
+            <br>
+            <img src="user.jpg" alt="user" class= "p-1 user">
+            <br>
+            <br>
+            <div class="p-3 icon-bar">
+                <a class="active" href="#"><i class="fa fa-home"></i></a> 
+                <a href="#"><i class="fa fa-search"></i></a>
+                <a href="#"><i class="fa fa-envelope"></i></a> 
+                <a href="#"><i class="fa fa-bell"></i></a>
+                <a href="#"><i class="fa fa-cogs"></i></a> 
+                <a href="#"><i class="fa fa-graduation-cap"></i></a>
+                <a href="#"><i class="fa fa-calendar"></i></a> 
+            </div>
+          </div>
+          <br>
+          
+          <div class="col-sm-11">
+            <div class="topnav-right" id="target" >
+              <a href="#" data-toggle="modal" data-target="#logoutModal">
+              <span class="glyphicon glyphicon-log-out"></span> Logout</a> 
+            </div>
+            <br>
+            <div class="topnav-right">
+              <img src="logo.png" name="logo" width="150px" height="150px"/>
+
+            </div>
+              <div class="modal" id="logoutModal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-sm">
+                  <div class="modal-content">
+                    <div class="modal-body">
+                      <p> Are you sure you want to log-off? </p>
+                      <div class="float-right">
+                        <img src="bye.gif" name="bye-gif" width="70px" height="70px">
+                      </div>
+                      <br/>
+                      <div class="actionsBtns">
+                          <form action="/logout" method="post">
+                              <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>                            
+                              <input type="submit" class="btn btn-default btn-success" data-dismiss="modal" value="Logout" />
+                              &nbsp;    &nbsp; 
+                              <button class="btn btn-warning" data-dismiss="modal">Cancel</button>
+                          </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>     
+
+              
+            <div class="well">
+              <h4>John Paul</h4>
+              <p>156354</p>        
+            </div>
+            <div class="row">
+              <div class="col-sm-4" >
+                    <div class="card" style="background-color:seagreen;">
+                        <img src="Competencies.jpg" class="card-img-top" alt="Competency">
+                        <div class="card-body">
+                          <h4 class="card-title">Competency</h4>
+                          <a href="#" class="btn btn-primary">View details</a>
+                        </div>
+                      </div>
+                
+              </div>
+              <div class="col-sm-4">
+                  <div class="card" style="background-color: #6F66AA;">
+                    <img src="certificate.jpg" class="card-img-top" alt="Certificate">
+                    <div class="card-body">
+                      <h4 class="card-title"> Certificate</h4>
+                      <a href="#" class="btn btn-primary">View details</a>
+                    </div>
+                  </div>
+                
+              </div>
+              <div class="col-sm-4">
+                <div class="card" style="background-color:crimson">
+                  <img src="knowledgeShare.jpeg" class="card-img-top" alt="Share">
+                  <div class="card-body">
+                    <h4 class="card-title"> Knowledge Share</h4>
+                    <a href="#" class="btn btn-primary">View details</a>
+                  </div>
+                </div>
+              </div>
+           
+              
+
+
+             <!-- <div class="row">
+              <div class="col-sm-4">
+                <div class="well">
+                  <p>Text</p> 
+                  <p>Text</p> 
+                  <p>Text</p> 
+                </div>
+              </div>
+             </div> -->
+              <!-- <div class="col-sm-4">
+                <div class="well">
+                  <p>Text</p> 
+                  <p>Text</p> 
+                  <p>Text</p> 
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="well">
+                  <p>Text</p> 
+                  <p>Text</p> 
+                  <p>Text</p> 
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-8">
+                <div class="well">
+                  <p>Text</p> 
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="well">
+                  <p>Text</p> 
+                </div>
+              </div>
+            </div> 
+          </div>
+        </div>
+      </div>  -->
+      
+      </body>
+      </html>
+      
+
+
+
+
+      
