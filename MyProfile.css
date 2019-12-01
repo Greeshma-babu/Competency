@@ -1,0 +1,269 @@
+/*
+*
+* ==========================================
+* CUSTOM UTIL CLASSES
+* ==========================================
+*
+*/
+
+.vertical-nav {
+    min-width: 17rem;
+    width: 17rem;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s;
+  }
+  
+  .page-content {
+    width: calc(100% - 17rem);
+    margin-left: 17rem;
+    transition: all 0.4s;
+  }
+  
+  /* for toggle behavior */
+  
+  #sidebar.active {
+    margin-left: -17rem;
+  }
+  
+  #content.active {
+    width: 100%;
+    margin: 0;
+  }
+  
+  @media (max-width: 768px) {
+    #sidebar {
+      margin-left: -17rem;
+    }
+    #sidebar.active {
+      margin-left: 0;
+    }
+    #content {
+      width: 100%;
+      margin: 0;
+    }
+    #content.active {
+      margin-left: 17rem;
+      width: calc(100% - 17rem);
+    }
+  }
+  
+  /*
+  *
+  * ==========================================
+  * FOR DEMO PURPOSE
+  * ==========================================
+  *
+  */
+  
+  body {
+    background: #599fd9;
+    background: -webkit-linear-gradient(to right, #599fd9, #c2e59c);
+    background: linear-gradient(to right, #599fd9, #c2e59c);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  
+  .separator {
+    margin: 3rem 0;
+    border-bottom: 1px dashed #fff;
+  }
+  
+  .text-uppercase {
+    letter-spacing: 0.1em;
+  }
+  
+  .text-gray {
+    color: #aaa;
+  }
+
+.recent {
+  width: 100%;
+}
+.carousel-inner{
+  width:100%; 
+  max-height: 200px !important;
+}
+
+.logout {
+  position: absolute;
+  top: 5px;
+  right: -35px;
+}
+/* Start of t factor  */
+.flip-card {
+  background-color: transparent;
+  width: 200px;
+  height: 200px;
+  perspective: 1000px;
+  padding-left: 15px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 120%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background: #599fd9;
+  background: -webkit-linear-gradient(to right, #599fd9, #c2e59c);
+  background: linear-gradient(to right, #599fd9, #c2e59c);
+  color: black;
+}
+
+.flip-card-back {
+  
+  background: -webkit-linear-gradient(to right, #599fd9, #c2e59c);
+  background: linear-gradient(to right, #599fd9, #c2e59c);
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.button {
+  background-color: rgb(228, 15, 174);
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  display: inline-block;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+ 
+}
+/* end of t factor */
+
+/* Start of Chat */
+.floating-chat{
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+ 
+}
+     
+/* End of Chat */
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 270px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 40%;
+  margin-bottom:10px;
+  margin-left: 20px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+
+/* start of Rate in Chat  */
+
+.rate {
+  float: left;
+  height: 46px;
+  padding: 0 10px;
+}
+.rate:not(:checked) > input {
+  position:absolute;
+  top:-9999px;
+}
+.rate:not(:checked) > label {
+  float:right;
+  width:1em;
+  overflow:hidden;
+  white-space:nowrap;
+  cursor:pointer;
+  font-size:30px;
+  color:#ccc;
+}
+.rate:not(:checked) > label:before {
+  content: '★ ';
+}
+.rate > input:checked ~ label {
+  color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+  color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+  color: #c59b08;
+}
+
+/* End of Rate style */
